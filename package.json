@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/killian-mannarelli/GitPoule#readme",
   "dependencies": {
-    "discord.js": "^13.2.0"
+    "discord.js": "^12.5.3"
   }
 }
