@@ -1,0 +1,22 @@
+{
+  "name": "gitpoule",
+  "version": "1.0.0",
+  "description": "Le bot officiel de GitPoule",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/killian-mannarelli/GitPoule.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/killian-mannarelli/GitPoule/issues"
+  },
+  "homepage": "https://github.com/killian-mannarelli/GitPoule#readme",
+  "dependencies": {
+    "discord.js": "^13.2.0"
+  }
+}
