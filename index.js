@@ -1,12 +1,29 @@
-const Discord = require('discord.js');
-const botClient = new Discord.Client();
+// Require the necessary discord.js classes
+const { Client, Intents } = require('discord.js');
+const { token } = require('./config.json');
 
-botClient.on("message", msg => {
-    if (!msg.content.startsWith("!"))//Si le message ne commence pas par le prefix du config.json
-		return;
+// Create a new client instance
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-    if(msg.author)
-    msg.channel.send('Hello !');
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+	console.log('Ready!');
 });
 
-botClient.login('ODk2ODY2MzI4OTA2OTg1NTIy.YWNV2w.mEQcSFgeSJi1B2U3Dl-Pta4ZE9U');
+
+//Permet de répondre aux / commands
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	const { commandName } = interaction;
+
+	if (commandName === 'poule') {
+		await interaction.reply('Poule!');
+	} 
+});
+
+
+// Login to Discord with your client's token
+console.log(token);
+client.login(token);
+
