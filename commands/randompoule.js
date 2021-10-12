@@ -1,18 +1,23 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed } = require('discord.js');
+const axios = require('axios').default;
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('randompoule')
 		.setDescription('Vous montre une poule, pas aussi bien que GitPoule mais bon...'),
 	async execute(interaction) {
-		//await interaction.reply(`Poule!\nUne image de la poule devrait arriver vite ${interaction.user.username}`);
+		
+		// const response = await axios.get("")
+		// console.log(response.data);
+		
 		const exampleEmbed = new MessageEmbed()
-	.setColor('#ffffff')
-	.setTitle('GitPoule')
-	.setDescription('Votez GitPoule')
-	.setImage('https://i.imgur.com/SBbL6ls.png')
-	interaction.reply({ embeds: [exampleEmbed] });
+			.setColor('#ffffff')
+			.setTitle('Une amie de Gitpoule')
+			.setDescription(`Voici une poule rien que pour toi`)
+			.setImage("https://source.unsplash.com/collection/12211424?sig=" + ((Math.random() * (1 - 74)) + 1));
+			interaction.reply({ embeds: [exampleEmbed] });
+	
 	},
 	
 };
